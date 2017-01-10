@@ -60,3 +60,8 @@ module.exports.login = function (req, res) {
 		}
 	})(req, res);
 };
+module.exports.updateProfile = function(req, res) {
+	User.find({_id: req.session._id}, function(err, result) {
+		
+	})
+}

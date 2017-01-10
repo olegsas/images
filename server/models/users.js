@@ -54,6 +54,7 @@ userSchema.methods.validPassword = function (password) {
 	return this.local.hash === hash;
 };
 
+
 userSchema.methods.generateJwt = function () {
 	const expiry = new Date();
 	expiry.setDate(expiry.getDate() + 7);
