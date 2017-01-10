@@ -5,7 +5,8 @@ module.exports = function (app) {
     app.post('/register', ctrlAuth.register);
     app.post('/login', ctrlAuth.login);
     app.get('/logout', logout);
-    app.post('/update-profile', ctrlAuth.updateProfile)
+    app.post('/updateProfile', ctrlAuth.updateProfile);
+    app.get('/getUserProfile', ctrlAuth.getUserProfile);
 };
 
 function isAuthenticated(req, res) {

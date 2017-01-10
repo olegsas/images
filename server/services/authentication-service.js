@@ -62,6 +62,26 @@ module.exports.login = function (req, res) {
 };
 module.exports.updateProfile = function(req, res) {
 	User.find({_id: req.session._id}, function(err, result) {
-		
+		if(err) {
+			sendJSONresponse(res, 404, err);
+			return;
+		}
+		if(result) {
+			console.log("result= "+result);
+			res.send(200);
+		}
 	})
-}
+};
+
+module.exports.getUserProfile = function(req, res) {
+	User.find({_id: req.session._id}, function(err, result) {
+		if(err) {
+			sendJSONresponse(res, 404, err);
+			return;
+		}
+		if(result) {
+			console.log("result= "+result);
+			res.send({profile: result.profile});
+		}
+	})
+};
