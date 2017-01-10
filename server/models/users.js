@@ -17,6 +17,8 @@ const userSchema = new Schema({
 		hash: String,
 		salt: String
 	},
+	isAdmin: {type: Boolean, default: false},
+	profile: {type: Boolean, default: false},
 	facebook: {
 		id: {
 			type: String
