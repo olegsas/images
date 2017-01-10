@@ -5,13 +5,16 @@ angular.module('app.checkbox', [])
     //  };
      $http.get('/getUserProfile')
      .then(profile => {
-         console.log(profile);
+         console.log("profile =="+profile.data.profile[0].profile);
          $scope.profile = profile.data.profile[0].profile;
      });
      $scope.update = function() {
-         $http.post('/updateProfile', {profile:$scope.checkboxModel.public})
+         console.log('====');
+         console.log($scope.profile);
+         $http.post('/updateProfile', {profile:$scope.profile})
          .then(profile => {
-             $scope.checkboxModel.public = profile.data
+             console.log('+++');
+             //$scope.profile = profile.data.profile[0].profile;
          })          
          
      }
