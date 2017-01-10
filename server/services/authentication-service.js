@@ -67,7 +67,8 @@ module.exports.updateProfile = function(req, res) {
 			return;
 		}
 		if(result) {
-			//console.log("result= "+result);
+			console.log("++server");
+			console.log(result.profile);
 			res.send({profile: result});
 		}
 	})
