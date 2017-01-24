@@ -5,17 +5,17 @@ angular.module('app.checkbox', [])
     //  };
      $http.get('/getUserProfile')
      .then(profile => {
-         console.log("profile =="+profile.data.profile[0].profile);
+        //  console.log("profile =="+profile.data.profile[0].profile);
          $scope.profile = profile.data.profile[0].profile;
      });
      
      $scope.update = function() {
-         console.log('====');
-         console.log($scope.profile);
+        //  console.log('====');
+        //  console.log('$scope.profile = ' + $scope.profile);
          $http.post('/updateProfile', {profile:$scope.profile})
          .then(profile => {
-             console.log('+++');
-             console.log("profile.data.profile[0].profile = "+profile.data.profile[0].profile);
+            //  console.log('+++');
+            //  console.log("profile.data.profile[0].profile = "+profile.data.profile[0].profile);
              $scope.profile = profile.data.profile[0].profile;
          })          
          
